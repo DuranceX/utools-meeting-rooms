@@ -1,0 +1,125 @@
+body{
+    background-color: #f1f3f5;
+}
+
+#addButton{
+    text-align: center;
+    color: #339af0;
+    margin-top: 2%;
+    height: 45px;
+    line-height: 45px;
+}
+
+#addMeetForm{
+    margin-top: 2%;
+    display: none;
+    background-color: #f8f9fa;
+    padding: 2% 5%;
+    box-shadow: 7px 5px 10px rgb(0 0 0 / 10%);
+    margin-top: 1.5%;
+    font-size: 14pt;
+    text-align: center;
+}
+
+#addMeetForm input{
+    margin-left: 1%;
+    margin-bottom: 1%;
+    height: 16px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #2364d2;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    padding: 5px 15px;
+    background: none;
+    color: #1a3b5d;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.MeetingCard{
+    background-color: #f8f9fa;
+    padding: 2% 5%;
+    box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    margin-top: 1.5%;
+}
+
+.MeetingInfo{
+    margin: unset;
+    display: inline-block;
+    font-size: 16pt;
+}
+
+.MeetingPsw{
+    display: block;
+    font-size: 12pt;
+    color: #495057;
+}
+
+.MeetingButton{
+    display: inline-block;
+    margin: auto;
+    margin-right: 10%;
+
+    width: 20%;
+    height: 45px;
+    background: #2364d2;
+    border: none;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: "Source Sans Pro", sans-serif;
+    box-shadow: 3px 10px 20px 0px rgb(35 100 210 / 30%);
+    color: #fff;
+    cursor: pointer;
+}
+
+#submitButton{
+    width: 15%;
+    height: 35px;
+    background: #2364d2;
+    border: none;
+    border-radius: 5px;
+    font-size: 16pt;
+    font-weight: 500;
+    font-family: "Source Sans Pro", sans-serif;
+    box-shadow: 3px 10px 20px 0px rgb(35 100 210 / 30%);
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#cancelButton{
+    width: 15%;
+    height: 35px;
+    background: #f03e3e;
+    border: none;
+    border-radius: 5px;
+    font-size: 16pt;
+    font-weight: 500;
+    font-family: "Source Sans Pro", sans-serif;
+    box-shadow: 3px 10px 20px 0px rgb(35 100 210 / 30%);
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#otherButton{
+    position: absolute;
+    right: 3%;
+    font-size: 22pt;
+    top: 1%;
+    cursor: pointer;
+}
+
+.otherButton{
+    display: inline-block;
+    margin: auto 0px;
+    width: fit-content;
+    font-size: 14pt;
+    font-weight: 500;
+    font-family: "Source Sans Pro", sans-serif;
+    cursor: pointer;
+    color: gray;
+    margin-left: -7%;
+}

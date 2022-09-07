@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="./index.js"></script>
+         <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+        <div id="holder"></div>
+        <div id="addButton" onclick="addMeeting()" >+ 添加会议</div>
+        <form id="addMeetForm">
+            <label>会议名称</label><input type="text"><br />
+            <label>会议号码</label><input type="text"><br />
+            <label>会议密码</label><input type="text">
+            <br />
+            <button type="submit" id="submitButton" onclick="confirmAddMeeting()">确认添加</button>
+            <button type="button" id="cancelButton" onclick="cancelAddMeeting()">取消</button>
+        </form>
+    </body>
+</html>
+
+

@@ -1,0 +1,29 @@
+{
+    "main":"index.html",
+    "logo": "logo.png",
+    "features": [
+        {
+            "code": "meeting_enter",
+            "explain": "点击进入腾讯会议",
+            "cmds":[
+                {
+                    "type":"over",
+                    "label":"进入腾讯会议",
+                    "exclude":"/meeting/",
+                    "match":"/.*/"
+                }
+            ]
+        },
+        {
+            "code":"meeting_list",
+            "explain":"会议列表",
+            "cmds":["meeting"]
+        }
+    ],
+    "name": "WeMeetRooms",
+    "pluginName": "腾讯会议室",
+    "description": "保存腾讯会议，并通过会议名快速进入会议",
+    "author": "Cardy",
+    "homepage": "",
+    "version": "0.0.1"
+}
