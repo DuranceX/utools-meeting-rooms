@@ -1,7 +1,7 @@
-var strData = localStorage.getItem("data");
+//var strData = localStorage.getItem("data");
+//var strData = "";
 var data = [];
 var parent = null;
-var test = "";
 //var rev = utools.db.get("data")==null?null:utools.db.get("data")._rev;
 
 window.onload = function(){
@@ -16,8 +16,8 @@ window.onload = function(){
       }
       else {
         if ("meeting_enter" === e){
-            data = JSON.parse(strData);
-            test = n;
+            // data = JSON.parse(strData);
+            data = utools.dbStorage.getItem("data")==null?[]:utools.dbStorage.getItem("data");
             var flag = false;
             for(var i=0;i<data.length;i++){
                 if(data[i].name == n){
@@ -39,9 +39,11 @@ window.onload = function(){
 function render(){
     clear();
     //strData = utools.db.get("data")==null?null:utools.db.get("data").data;
-    strData = localStorage.getItem("data");
-    if(strData != null){
-        data = JSON.parse(strData);
+    // strData = utools.dbStorage.getItem("data")==null?null:utools.dbStorage.getItem("data");
+    //strData = localStorage.getItem("data");
+    data = utools.dbStorage.getItem("data")==null?[]:utools.dbStorage.getItem("data");
+    if(data != null){
+        //data = JSON.parse(strData);
 
         for(var i=0;i<data.length;i++){
             var temp = document.createElement("div");
@@ -70,10 +72,11 @@ function render(){
             temp.append(tempInfoCard,tempButton,otherButton);
             parent.append(temp);
         }
-    }else{
-        var x = utools.db.put({_id:"data",data:""});
-        rev = x.rev;
     }
+    // }else{
+    //     var x = utools.db.put({_id:"data",data:""});
+    //     rev = x.rev;
+    // }
 }
 
 function go_meeting(meeting_code) {
@@ -89,14 +92,11 @@ function go_meeting(meeting_code) {
 function delete_meeting(meeting_code){
     for(var i=0;i<data.length;i++){
         if(data[i].code == meeting_code){
-            console.log(i);
-            console.log(meeting_code);
-            console.log(data[i]);
             data.splice(i,1);
-            console.log(data);
-            var strData = JSON.stringify(data);
-            //utools.db.promises.put({_id:"data","data":strData,_rev:rev});
-            localStorage.setItem("data",strData);
+            //var strData = JSON.stringify(data);
+            utools.dbStorage.setItem("data",data);
+            // utools.db.put({_id:"data",data:strData,_rev:rev});
+            //localStorage.setItem("data",strData);
         }
     }
     render();
@@ -120,9 +120,12 @@ function confirmAddMeeting(){
     tempData.code = temp[4].value;
     tempData.password = temp[7].value;
     data.push(tempData);
-    var strData = JSON.stringify(data);
-    //utools.db.put({_id:"data","data":strData,_rev:rev});
-    localStorage.setItem("data",strData);
+    //var strData = JSON.stringify(data);
+    console.log("data",data);
+    console.log("tempData",tempData);
+    utools.dbStorage.setItem("data",data);
+    //utools.db.put({_id:"data",data:strData,_rev:rev});
+    //localStorage.setItem("data",strData);
     temp[1].value = "";
     temp[4].value = "";
     temp[7].value = "";
@@ -136,4 +139,5 @@ function cancelAddMeeting(){
 
 function clear(){
     parent.innerHTML = "";
+    console.log("调用clear");
 }
