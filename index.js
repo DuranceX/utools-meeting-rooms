@@ -81,7 +81,7 @@ function render(){
 
 function go_meeting(meeting_code) {
     if (meeting_code != null) {
-        code = meeting_code.replace(/\s*\-/g, "");
+        code = meeting_code.replace(/[\s,\-]/g, "");
         console.log("wemeet://page/inmeeting?meeting_code=" + code);
         utools.shellOpenExternal("wemeet://page/inmeeting?meeting_code=" + code)
         window.utools.hideMainWindow();
