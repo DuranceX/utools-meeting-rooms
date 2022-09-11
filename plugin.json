@@ -9,7 +9,7 @@
                 {
                     "type":"over",
                     "label":"进入腾讯会议",
-                    "exclude":"/meeting/",
+                    "exclude":"/\\d{3,4}([- ]?)\\d{3,4}\\1\\d{3,4}|meeting/",
                     "match":"/.*/"
                 }
             ]
@@ -18,6 +18,17 @@
             "code":"meeting_list",
             "explain":"会议列表",
             "cmds":["meeting"]
+        },
+        {
+            "code": "meeting_number",
+            "explain": "通过会议号进入腾讯会议",
+            "cmds":[
+                {
+                    "type": "over",
+                    "label":"通过会议号打开腾讯会议",
+                    "match":"/\\d{3,4}([- ]?)\\d{3,4}\\1\\d{3,4}/"
+                }
+            ]
         }
     ],
     "name": "WeMeetRooms",
@@ -25,5 +36,5 @@
     "description": "保存腾讯会议，并通过会议名快速进入会议",
     "author": "Cardy",
     "homepage": "",
-    "version": "0.0.1"
+    "version": "0.0.4"
 }

@@ -14,6 +14,9 @@ window.onload = function(){
         parent = document.getElementById("holder");
         render();
       }
+      else if("meeting_number" === e){
+        go_meeting(n);
+      }
       else {
         if ("meeting_enter" === e){
             // data = JSON.parse(strData);
