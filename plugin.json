@@ -1,6 +1,7 @@
 {
     "main":"index.html",
     "logo": "logo.png",
+    "preload": "preload.js",
     "features": [
         {
             "code": "meeting_enter",
@@ -36,5 +37,5 @@
     "description": "保存腾讯会议，并通过会议名快速进入会议",
     "author": "Cardy",
     "homepage": "",
-    "version": "0.0.4"
+    "version": "1.0.0"
 }
